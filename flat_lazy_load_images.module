@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Lazy load images module
+ */
+function flat_lazy_load_images() {}
+
+/**
+ * Assets for lazy loading images
+ */
+function flat_lazy_load_images_assets() {
+    drupal_add_js(drupal_get_path('module', 'flat_lazy_load_images') . '/js/flat-lazy.js');
+}
