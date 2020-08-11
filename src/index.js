@@ -20,7 +20,7 @@ if (!'IntersectionObserver' in window &&
         });
 
         // finding lazy loadable images
-        let targets = document.querySelectorAll('[data-flat-lazy-load-image="true"][data-loaded="0"]');
+        let targets = document.querySelectorAll('[data-flat-lazy-load-image="1"][data-loaded="0"]');
 
         // adding to intersect observer
         targets.forEach(function(target) {
