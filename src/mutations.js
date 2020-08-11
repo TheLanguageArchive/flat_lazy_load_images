@@ -17,7 +17,9 @@ module.exports = function observeMutations(observer) {
 
                         let image = node.querySelector('img');
 
-                        if (typeof image !== 'undefined') {
+                        if (image !== null && false === image.hasAttribute('data-observing')) {
+                            console.log(image);
+                            image.setAttribute('data-observing', true);
                             observer.observe(image);
                         }
                     });

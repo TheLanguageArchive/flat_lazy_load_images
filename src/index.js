@@ -16,14 +16,16 @@ if (!'IntersectionObserver' in window &&
 
             root: document,
             rootMargin: `${viewportHeight}px 0px ${viewportHeight}px 0px`,
-            threshold: 0.5
+            threshold: 0.1
         });
 
         // finding lazy loadable images
-        let targets = document.querySelectorAll('[data-flat-lazy-load-image][data-loaded="0"]');
+        let targets = document.querySelectorAll('[data-flat-lazy-load-image="true"][data-loaded="0"]');
 
         // adding to intersect observer
         targets.forEach(function(target) {
+
+            target.setAttribute('data-observing', true);
             intersectObserver.observe(target);
         });
 
