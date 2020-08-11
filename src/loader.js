@@ -6,6 +6,9 @@ module.exports = function loader(entries, observer) {
 
         if (entry.isIntersecting === true && target.getAttribute('data-loaded') == '0') {
 
+            // loading image
+            target.src = target.getAttribute('data-src');
+
             // marking it as loaded
             target.setAttribute('data-loaded', '1');
 
@@ -16,9 +19,6 @@ module.exports = function loader(entries, observer) {
             if (target.getAttribute('data-flat-lazy-load-intersected') == '1') {
                 target.dispatchEvent(new CustomEvent('flat.lazyload.intersected', {bubbles: true}));
             }
-
-            // and finally loading image
-            target.src = target.getAttribute('data-src');
         }
     });
 };
