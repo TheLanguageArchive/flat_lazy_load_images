@@ -1,4 +1,4 @@
-module.exports = function observeMutations(observer) {
+module.exports = function observeMutations(intersectionObserver) {
 
     // observing mutations DOM of gallery grid
     let mutation = function(entries, mutationObserver) {
@@ -18,9 +18,9 @@ module.exports = function observeMutations(observer) {
                         let image = node.querySelector('img');
 
                         if (image !== null && false === image.hasAttribute('data-observing')) {
-                            console.log(image);
+
                             image.setAttribute('data-observing', true);
-                            observer.observe(image);
+                            intersectionObserver.observe(image);
                         }
                     });
             }
